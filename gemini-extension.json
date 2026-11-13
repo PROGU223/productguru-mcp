@@ -1,0 +1,12 @@
+{
+  "name": "productguru-mcp",
+  "version": "1.0.0",
+  "description": "Look up a product by EAN or UPC barcode: name, brand, category, recorded specifications and any linked government recall notice. Read-only, no account.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "productguru": {
+      "httpUrl": "https://myproduct.guru/mcp",
+      "timeout": 30000
+    }
+  }
+}
