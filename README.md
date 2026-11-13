@@ -1,14 +1,15 @@
-# ProductGuru product lookup for Gemini CLI
+# ProductGuru MCP server: product lookup by barcode
 
-A [Gemini CLI](https://github.com/google-gemini/gemini-cli) extension that connects Gemini CLI to the public,
-read-only ProductGuru MCP server at `https://myproduct.guru/mcp`.
+A public, read-only MCP server at `https://myproduct.guru/mcp` (Streamable HTTP, no account, no API key).
+This repository holds its client configuration: a [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+extension, a Cursor plugin manifest and setup notes for other MCP clients.
 
 Give it a barcode and it returns what ProductGuru has recorded for that product: name, brand, category and
 recorded specifications such as dimensions, weight or model number. For those products it also lists any
 product-safety recall notice from the government registers ProductGuru follows, with the agency's name, the date,
 the stated reason and a link to the agency's own notice.
 
-## Install
+## Install in Gemini CLI
 
 ```bash
 gemini extensions install https://github.com/PROGU223/productguru-mcp
@@ -40,6 +41,62 @@ or run:
 ```bash
 gemini mcp add --transport http productguru https://myproduct.guru/mcp
 ```
+
+## Other MCP clients
+
+The server needs no account, key or local process. Point any client that supports remote (Streamable HTTP)
+MCP servers at `https://myproduct.guru/mcp`.
+
+**Claude Code**
+
+```bash
+claude mcp add --transport http productguru https://myproduct.guru/mcp
+```
+
+**Claude (web and desktop):** Settings → Connectors → Add custom connector → URL `https://myproduct.guru/mcp`.
+
+**Cursor:** add to `~/.cursor/mcp.json` (all projects) or `.cursor/mcp.json` (one project):
+
+```json
+{
+  "mcpServers": {
+    "productguru": {
+      "url": "https://myproduct.guru/mcp"
+    }
+  }
+}
+```
+
+**Cline:** add to `cline_mcp_settings.json` (details in [llms-install.md](llms-install.md)):
+
+```json
+{
+  "mcpServers": {
+    "productguru": {
+      "type": "streamableHttp",
+      "url": "https://myproduct.guru/mcp",
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+**VS Code:** add to `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "productguru": {
+      "type": "http",
+      "url": "https://myproduct.guru/mcp"
+    }
+  }
+}
+```
+
+The server is also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io) as
+`guru.myproduct/product-lookup`.
 
 ## Example prompts
 

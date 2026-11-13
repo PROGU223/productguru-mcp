@@ -1,0 +1,14 @@
+{
+  "name": "productguru",
+  "description": "Look up a product by EAN or UPC barcode: name, brand, category, recorded specifications and any official government recall notices. Public, read-only, no API key.",
+  "version": "1.0.0",
+  "author": {
+    "name": "ProductGuru",
+    "email": "support@myproduct.guru"
+  },
+  "homepage": "https://myproduct.guru/developers#mcp",
+  "repository": "https://github.com/PROGU223/productguru-mcp",
+  "license": "MIT",
+  "keywords": ["barcode", "ean", "upc", "gtin", "product-recalls", "product-safety", "mcp"],
+  "logo": "assets/logo.png"
+}
