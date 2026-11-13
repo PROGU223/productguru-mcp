@@ -19,6 +19,8 @@ Restart Gemini CLI, then check the connection with `/mcp`. You should see the `p
 
 No account, API key or sign-in is needed for this server.
 
+Server documentation: https://myproduct.guru/developers
+
 ### Without the extension
 
 Add the server to `~/.gemini/settings.json` (all projects) or `.gemini/settings.json` (one project):
@@ -69,8 +71,8 @@ support@myproduct.guru.
 
 ## Privacy
 
-The server logs, per call, a salted client hash, the barcode, the result and the latency, for 30 days. It does not
-receive or store your conversation.
+The server logs, per call, a salted hash of the client address, the barcode, the result and the latency, kept
+for 30 days. It receives only the barcode, not your conversation. Full policy: https://myproduct.guru/privacy
 
 ## Licence
 
