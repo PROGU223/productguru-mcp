@@ -1,5 +1,7 @@
 # ProductGuru MCP server: product lookup by barcode
 
+[![mcptry](https://mcptry.com/badge/guru.myproduct/product-lookup)](https://mcptry.com/servers/guru.myproduct/product-lookup)
+
 A public, read-only MCP server at `https://myproduct.guru/mcp` (Streamable HTTP, no account, no API key).
 This repository holds its client configuration: a [Gemini CLI](https://github.com/google-gemini/gemini-cli)
 extension, a Cursor plugin manifest and setup notes for other MCP clients.
